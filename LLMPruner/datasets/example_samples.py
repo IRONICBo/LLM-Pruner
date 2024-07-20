@@ -23,10 +23,10 @@ def get_c4(tokenizer, n_samples, seq_len):
     return torch.cat(tokenized_samples, dim=0)
 
 def get_bookcorpus(tokenizer, n_samples, seq_len):
-    traindata = load_dataset(
-        'bookcorpus', split='train'
-    )
-    
+    #traindata = load_dataset(
+    #    'bookcorpus', split='train'
+    #)
+    traindata = load_dataset('text', data_files='/disk1/lvbo/dataset/books_large_p1.txt', split='train')
     tokenized_samples, history = [], []
     for _ in range(n_samples):
         while True:
